@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CartLength from "../common/CartLength";
 import WishlistLength from "../common/WishlistLength";
-export default function Header2({
+export default function Header({
   textClass,
   bgColor = "",
   uppercase = false,
@@ -43,7 +43,7 @@ export default function Header2({
               <Image
                 alt="logo"
                 className="logo"
-                src="/images/logo/logo.svg"
+                src="/1.png"
                 width="136"
                 height="21"
               />

@@ -218,10 +218,10 @@
 .no-csspointerevents .nice-select.open .list {
   display: block;
 }
-
+/* 
 // image select
-@import url(/css/bootstrap-select.min.css);
-
+@import "../../css/bootstrap-select.min.css";
+ */
 .dropdown.bootstrap-select.image-select {
   &.style-default {
     width: unset;
