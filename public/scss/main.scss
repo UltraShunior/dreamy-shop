@@ -1,6 +1,6 @@
 // main.scss
 @use "./abstracts/index" as *;
-@use "reset";
+@use "./reset";
 @use "./component/index";
 @use "./sections";
 @use "./responsive";
@@ -9,5 +9,5 @@
 @use "../css/bootstrap.min.css";
 @use "../css/swiper-bundle.min.css";
 @use "../css/animate.css";
-@use "./rtl.scss";
-@use "./custom.scss";
+@use "./rtl";
+@use "./custom";
