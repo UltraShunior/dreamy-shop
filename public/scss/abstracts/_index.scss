@@ -1,3 +1,2 @@
-// public/scss/abstracts/_index.scss
-@forward "variable";
-@forward "mixin";
+@import './variable';
+@import './mixin'
