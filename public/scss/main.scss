@@ -1,0 +1,13 @@
+// main.scss
+@use "./abstracts/index" as *;
+@use "reset";
+@use "./component/index";
+@use "./sections";
+@use "./responsive";
+@use "../fonts/fonts.css";
+@use "../fonts/font-icons.css";
+@use "../css/bootstrap.min.css";
+@use "../css/swiper-bundle.min.css";
+@use "../css/animate.css";
+@use "./rtl.scss";
+@use "./custom.scss";
