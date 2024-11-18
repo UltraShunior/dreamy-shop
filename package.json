@@ -12,7 +12,7 @@
     "@emailjs/browser": "^4.4.1",
     "@google/model-viewer": "^3.5.0",
     "animate.css": "^4.1.1",
-    "bootstrap": "^5.3.2",
+    "bootstrap": "^5.3.3",
     "drift-zoom": "^1.5.1",
     "next": "15.0.3",
     "photoswipe": "^5.4.4",
