@@ -1,47 +1,54 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import { slides } from "@/data/heroslides";
-import Link from "next/link";
-import React from "react";
 import Image from "next/image";
+import { slides2 } from "@/data/heroslides";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
+
 export function Hero() {
   return (
-    <div className="tf-slideshow slider-effect-fade position-relative">
+    <section className="tf-slideshow slider-collection hover-sw-nav">
       <Swiper
         dir="ltr"
-        className="swiper tf-sw-slideshow"
-        modules={[Pagination]}
-        pagination={{ clickable: true, el: ".sp1" }}
-        speed={1000}
+        slidesPerView={3} // Adjust based on your requirements (data-preview attribute)
+        spaceBetween={5} // Adjust based on your requirements (data-space attribute)
+        centeredSlides={false} // Adjust based on your requirements (data-centered attribute)
+        loop={false} // Adjust based on your requirements (data-loop attribute)
+        speed={1000} // Adjust based on your requirements (data-speed attribute)
+        autoplay={{
+          delay: 2000, // Adjust based on your requirements (data-delay attribute)
+        }}
+        modules={[Autoplay, Navigation, Pagination]}
+        pagination={{ clickable: true, el: ".spb4" }}
+        navigation={{
+          prevEl: ".snbp4",
+          nextEl: ".snbn4",
+        }}
+        breakpoints={{
+          768: { slidesPerView: 3 }, // Adjust based on your requirements (data-tablet attribute)
+          0: { slidesPerView: 1 }, // Adjust based on your requirements (data-mobile attribute)
+        }}
       >
-        {slides.map((slide, index) => (
-          <SwiperSlide className="swiper-slide" key={index}>
-            <div className="wrap-slider">
-              <Image
-                priority
-                alt="fashion-slideshow"
-                src={slide.imgSrc}
-                width="2000"
-                height="1125"
-              />
-              <div className="box-content">
-                <div className="container">
-                  <h1 className="fade-item fade-item-1">
-                    {slide.title.split("\n").map((line, i) => (
-                      <React.Fragment key={i}>
-                        {line}
-                        <br />
-                      </React.Fragment>
-                    ))}
-                  </h1>
-                  <p className="fade-item fade-item-2">{slide.text}</p>
+        {slides2.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="collection-item hover-img">
+              <div className="collection-inner">
+                <Link href={slide.href} className="collection-image img-style">
+                  <Image
+                    alt={slide.alt}
+                    src={slide.imgSrc}
+                    width="631"
+                    height="806"
+                    priority
+                  />
+                </Link>
+                <div className="collection-content">
                   <Link
-                    href={`/shop-default`}
-                    className="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-3"
+                    href={slide.href}
+                    className="tf-btn hover-icon collection-title radius-3"
                   >
-                    <span>{slide.btnText}</span>
-                    <i className="icon icon-arrow-right" />
+                    <span>{slide.title}</span>
+                    <i className="icon icon-arrow1-top-left" />
                   </Link>
                 </div>
               </div>
@@ -49,11 +56,13 @@ export function Hero() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="wrap-pagination">
-        <div className="container">
-          <div className="sw-dots sp1 sw-pagination-slider justify-content-center" />
-        </div>
+      <div className="nav-sw nav-next-slider navigation-next-slider box-icon w_46 round snbp4">
+        <span className="icon icon-arrow-left" />
       </div>
-    </div>
+      <div className="nav-sw nav-prev-slider navigation-prev-slider box-icon w_46 round snbn4">
+        <span className="icon icon-arrow-right" />
+      </div>
+      <div className="sw-dots style-2 sw-pagination-slider justify-content-center spb4" />
+    </section>
   );
 }

@@ -1,6 +1,10 @@
-export { Brands } from "./Brands";
 export { Categories } from "./Categories";
+export { Banner } from "./Banner";
 export { Hero } from "./Hero";
 export { Products } from "./Products";
-export { Marquee } from "./Marquee";
-export { Lookbook } from "./Lookbook";
+export { Countdown } from "./Countdown";
+export { Products2 } from "./Products2";
+export { Testimonials } from "./Testimonials";
+export { VideoBanner } from "./VideoBanner";
+export { Collections } from "./Collections";
+export { Topbar } from "./Topbar";
