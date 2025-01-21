@@ -8,3 +8,4 @@ export { Testimonials } from "./Testimonials";
 export { VideoBanner } from "./VideoBanner";
 export { Collections } from "./Collections";
 export { Topbar } from "./Topbar";
+export { Sections } from "./Sections";

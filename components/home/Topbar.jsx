@@ -5,6 +5,26 @@ import LanguageSelect from "@/components/common/LanguageSelect";
 import CurrencySelect from "@/components/common/CurrencySelect";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+
+const topBarData = [
+  {
+    id: 1,
+    text: "Descuentos de verano del 70% de descuento",
+    link: "/",
+  },
+  {
+    id: 2,
+    text: "Iphones nuevos en stock",
+    link: "/",
+  },
+  {
+    id: 3,
+    text: "Importdos de USA",
+    link: "/",
+  },
+];
+
 export function Topbar() {
   return (
     <div className="tf-top-bar bg_dark line pe-4">
@@ -12,8 +32,8 @@ export function Topbar() {
         <div className="tf-top-bar_wrap grid-3 gap-30 align-items-center">
           <div className="tf-top-bar_left">
             <div className="d-flex gap-30 text_white fw-5">
-              <span>(+333) 123-1688</span>
-              <span>sayhello@ecomus.com</span>
+              <span>(+54) 128383285</span>
+              <span>ventas@dreamy.shop</span>
             </div>
           </div>
           <div className="text-center overflow-hidden">
@@ -28,30 +48,13 @@ export function Topbar() {
               }}
               loop
             >
-              <SwiperSlide className="swiper-slide">
-                <p className="top-bar-text fw-5 text_white">
-                  Spring Fashion Sale{" "}
-                  <Link
-                    href={`/shop-default`}
-                    title="all collection"
-                    className="tf-btn btn-line"
-                  >
-                    {" "}
-                    Shop now
-                    <i className="icon icon-arrow1-top-left" />
+              {topBarData.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <Link href={item.link}>
+                    <span className="text_white fw-5">{item.text}</span>
                   </Link>
-                </p>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <p className="top-bar-text fw-5 text_white">
-                  <a>Summer sale discount off 70%</a>
-                </p>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <p className="top-bar-text fw-5 text_white">
-                  <a>Time to refresh your wardrobe.</a>
-                </p>
-              </SwiperSlide>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
           <div className="top-bar-language tf-cur justify-content-end pe-5">

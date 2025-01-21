@@ -29,7 +29,7 @@ import ToolbarBottom from "@/components/modals/ToolbarBottom";
 import ToolbarShop from "@/components/modals/ToolbarShop";
 
 import { usePathname } from "next/navigation";
-import NewsletterModal from "@/components/modals/NewsletterModal";
+// import NewsletterModal from "@/components/modals/NewsletterModal";
 import ShareModal from "@/components/modals/ShareModal";
 import ScrollTop from "@/components/common/ScrollTop";
 
@@ -139,12 +139,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     }
   }, [scrollDirection]);
   useEffect(() => {
-    const { WOW } = require("wowjs");
-    const wow = new WOW({
-      mobile: false,
-      live: false,
-    });
-    wow.init();
+    if (typeof window !== 'undefined') {
+      const WOW: any = require('wowjs');
+      console.log('WOW', WOW.WOW);
+      const wow = new WOW.WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: false,
+        live: false
+      });
+      wow.init();
+    }
   }, [pathname]);
 
   useEffect(() => {
@@ -196,8 +202,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SearchModal />
           <ToolbarBottom />
           <ToolbarShop />
-          <NewsletterModal />
+          {/* <NewsletterModal /> */}
           <ShareModal />{" "}
+          
         </Context>
         <ScrollTop />
       </body>

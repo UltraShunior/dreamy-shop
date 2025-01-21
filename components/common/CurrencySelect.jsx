@@ -21,9 +21,9 @@ const optionsData = [
     selected: true,
   },
   {
-    value: "vn",
-    thumbnail: "/images/country/vn.svg",
-    text: "VND ₫ | Vietnam",
+    value: "ar",
+    thumbnail: "/images/country/Argentina.webp",
+    text: "ARS $ | Argentina",
   },
 ];
 export default function CurrencySelect({ topStart = false, light = false }) {

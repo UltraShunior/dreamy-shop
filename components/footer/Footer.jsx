@@ -6,7 +6,7 @@ import Link from "next/link";
 import LanguageSelect from "../common/LanguageSelect";
 import CurrencySelect from "../common/CurrencySelect";
 import { aboutLinks, footerLinks, paymentImages } from "@/data/footerLinks";
-export default function Footer2({ bgColor = "background-black" }) {
+export function Footer({ bgColor = "background-white" }) {
   useEffect(() => {
     const headings = document.querySelectorAll(".footer-heading-moblie");
 
@@ -67,7 +67,7 @@ export default function Footer2({ bgColor = "background-black" }) {
                     <Link href={`/`}>
                       <Image
                         alt="image"
-                        src="/images/logo/logo-white.svg"
+                        src="/images/logo/logo.svg"
                         width={136}
                         height={21}
                       />

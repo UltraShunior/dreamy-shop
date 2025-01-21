@@ -9,7 +9,7 @@ export function Products2() {
   return (
     <section>
       <div className="container-full">
-        <div className="bg_grey-5 radius-60 flat-spacing-21">
+        <div className="bg_grey-5 rounded-4 flat-spacing-21">
           <div className="flat-title">
             <span className="title fw-6 wow fadeInUp" data-wow-delay="0s">
               Our best sellers

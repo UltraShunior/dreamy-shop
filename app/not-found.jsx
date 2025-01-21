@@ -1,15 +1,11 @@
-import Footer1 from "@/components/footer/Footer";
-import Header1 from "@/components/header/Header";
+import { Footer } from "@/components/footer/Footer";
+import Header from "../components/header/Header";
 import Link from "next/link";
 import React from "react";
-export const metadata = {
-  title: "Page Not Found || Ecomus - Ultimate Nextjs Ecommerce Template",
-  description: "Ecomus - Ultimate Nextjs Ecommerce Template",
-};
 export default function notFound() {
   return (
     <>
-      <Header1 />
+      <Header />
       <section className="page-404-wrap">
         <div className="container">
           <div className="row">
@@ -32,7 +28,7 @@ export default function notFound() {
           </div>
         </div>
       </section>
-      <Footer1 />
+      <Footer/>
     </>
   );
 }
